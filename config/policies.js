@@ -29,7 +29,7 @@ module.exports.policies = {
    '*': true,
    UserController:{
      'dashboard':['isAuthenticate'],
-     'updateUser': [ 'isEnabled'],
+     'updateUser': [ 'isAuthenticate','isEnabled'],
    },
 
   /***************************************************************************

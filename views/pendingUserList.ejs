@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>DROR | Dashboard</title>
   <style>
     table, th, td {
       border: 1px solid black;
@@ -18,27 +18,87 @@
       text-align: left;
     }
   </style>
-</head>
-<body>
-<p>List of Pending User</p>
-<table style="width:60%">
-  <tr>
-    <th>id</th>
-    <th>first name</th>
-    <th>last name</th>
-    <th><center>email</center> </th>
-    <th>Action </th>
-  </tr>
-  <%for(let record of user){%>
-  <tr>
-    <td><%=record.id%></td>
-    <td><%=record.firstName%></td>
-    <td><%=record.lastName%></td>
-    <td><%=record.email%></td>
-    <td><a href="/approvedUser/<%=record.id%>">Approved</a></td>
-  </tr>
-    <%}%>
+  <!-- Bootstrap core CSS -->
+  <link href="styles/bootstrap.min.css" rel="stylesheet">
 
-</table>
+  <!-- Custom styles for this template -->
+  <link href="styles/home.css" rel="stylesheet">
+</head>
+
+<body>
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Dashboard</a>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="logout">Sign out</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="/displayUser">
+              <span data-feather="file"></span>
+              All User
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pendingUser">
+              <span data-feather="file"></span>
+              Pending User
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/approvedList">
+              <span data-feather="file"></span>
+              Approved User
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">List of Pending User</h1>
+      </div>
+      <div>
+        <table style="width:60%">
+          <tr>
+            <th>id</th>
+            <th>first name</th>
+            <th>last name</th>
+            <th><center>email</center> </th>
+            <th>Action </th>
+          </tr>
+          <%for(let record of user){%>
+          <tr>
+            <td><%=record.id%></td>
+            <td><%=record.firstName%></td>
+            <td><%=record.lastName%></td>
+            <td><%=record.email%></td>
+            <td><a href="/approvedUser/<%=record.id%>">Approved</a></td>
+          </tr>
+          <%}%>
+
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.3.3.7.js"></script>
 </body>
 </html>
+

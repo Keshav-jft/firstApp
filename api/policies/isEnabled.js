@@ -1,8 +1,8 @@
 module.exports =async function(req, res, next){
   console.log("User Enabled   :  ");
-  if(req.user.isAuthenticate ){
-    let enabledUser=await User.findOne({id:req.user.id,where:{enabled:true}})
-    if(enabledUser){
+
+    let user=await User.findOne({id:req.user.id})
+    if(user.enabled){
       return next();
     }
     else {
@@ -10,5 +10,5 @@ module.exports =async function(req, res, next){
       return res.redirect('/dashboard');
     }
 
-  }
+
 };
