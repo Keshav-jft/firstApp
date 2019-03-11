@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+    }
+    th {
+      text-align: left;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+<p>List of Approved User</p>
+<table style="width:60%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Email</th>
+  </tr>
+  <%for(let record of user){%>
+  <%if(record.role[0].authority==='USER'){%>
+  <tr>
+    <td><%=record.firstName%></td>
+    <td><%=record.lastName%></td>
+    <td><%=record.email%></td>
+  </tr>
+  <% }%>
+  <%}%>
+</table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<! doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>userProfile</title>
+</head>
+<body>
+
+<h1><B>User Profile</B></h1>
+<form method="POST" action=" "
+      class="needs-validation" novalidate >
+  <input type="hidden" name="id" value="<%=user.id%>">
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationTooltip01">First name :</label><br>
+      <input type="text" class="form-control" id="validationTooltip01"name="firstName" value="<%=user.firstName%>" disabled>
+    </div>
+    <br>
+    <div class="col-md-6 mb-3">
+      <label for="validationTooltip02">Last name :</label><br>
+      <input type="text" class="form-control" id="validationTooltip02"name="lastName" value="<%=user.lastName%>"disabled><br>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationTooltipUsername">Email-Id :</label><br>
+      <div class="input-group">
+      </div>
+      <input type="text" class="form-control" id="validationTooltipUsername"name="email"aria-describedby="validationTooltipUsernamePrepend" value="<%=user.email%>" disabled><br>
+    </div>
+  </div>
+  </div>
+
+  </div>
+ <a href="/dashboard"><button class="btn btn-primary" type="button">Back</button></a>
+</form>
+</body>
+</html>

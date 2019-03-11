@@ -1,0 +1,55 @@
+<! doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 6px;
+      box-sizing: border-box;
+    }
+  </style>
+
+  <title>updateProfile</title>
+</head>
+<body>
+
+<h1><B>User Profile</B></h1>
+
+<% if(isUpdate){%>
+<div class="alert alert-success">
+  <strong><%=message%></strong>
+</div>
+
+<%}
+%>
+<form method="POST" action="/updateProfile "
+      class="needs-validation" novalidate >
+  <input type="hidden" name="id" value="<%=user.id%>">
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationTooltip01">First name :</label>
+      <input type="text" class="form-control" id="validationTooltip01"name="firstName" value="<%=user.firstName%>" >
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationTooltip02">Last name :</label>
+      <input type="text" class="form-control" id="validationTooltip02"name="lastName" value="<%=user.lastName%>">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationTooltipUsername">Email-Id :</label>
+      <div class="input-group">
+      </div>
+      <input type="text" class="form-control" id="validationTooltipUsername"name="email"aria-describedby="validationTooltipUsernamePrepend" value="<%=user.email%>" required>
+    </div>
+  </div>
+  </div>
+
+  </div>
+<a href="/dashboard" ><button class="btn btn-primary" type="submit"value="submit">submit</button></a>
+</form>
+</body>
+</html>

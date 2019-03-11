@@ -1,0 +1,43 @@
+<! doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration</title>
+
+</head>
+<body>
+
+<h1><B>Registration</B></h1>
+<form method="POST" action="registration"
+  class="needs-validation" novalidate >
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationTooltip01">First name</label>
+      <input type="text" class="form-control" id="validationTooltip01"name="firstName" placeholder="First name" value="" required>
+    </div></br>
+    <div class="col-md-4 mb-3">
+      <label for="validationTooltip02">Last name</label>
+      <input type="text" class="form-control" id="validationTooltip02"name="lastName" placeholder="Last name" value="" required>
+    </div></br>
+    <div class="col-md-4 mb-3">
+      <label for="validationTooltipUsername">Email-Id</label>
+      <div class="input-group">
+        </div>
+        <input type="text" class="form-control" id="validationTooltipUsername"name="email" placeholder="Email" aria-describedby="validationTooltipUsernamePrepend" required>
+      </div>
+    </div>
+  </div></br>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationTooltip03">password</label>
+      <input type="password" class="form-control" id="validationTooltip03"name="password" placeholder="password" required>
+    </div>
+
+  </div>
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </form>
+</body>
+</html>
