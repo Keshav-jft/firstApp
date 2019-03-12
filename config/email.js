@@ -1,8 +1,8 @@
 module.exports.email = {
   service:"SendGrid",
 auth: {
-  user: "saurabhbaghel",
-  pass: "saurabh4292@"
+  user: "",
+  pass: ""
 },
 templateDir: "api/emailTemplates",
 from: "abc@gmail.com",
