@@ -68,16 +68,30 @@ module.exports = {
       }
 
     },
-  /*create: function (req, res) {
-    User.create(req.body).exec(function (err, user) {
-      if (err) {
-        return res.json(err.status, {err: err});
+  forgotPassword:async function(req,res){
+    if(req.method==='GET')
+      res.redirect('changePassword');
+    else if(req.method==='POST'){
+      let user=await User.findOne({email:req.param('email')});
+      if(user){
+        Mailer.sendChangePasswordMail(user);
+        console.log('mail is sent');
+        return res.redirect('login')
       }
-      if (user) {
-        Mailer.sendWelcomeMail(user);
-        res.json(200, {user: user});
-      }
-    });
+    }
+
   },
-*/
+  resetPassword:async function (req,res) {
+  if(req.method==='POST'){
+
+   let updatePassword=await User.update({id:req.param('id')},{password:nbcrypt.hashSync(req.body.password)})
+
+    res.redirect('login');
+  }
+  if(req.method === 'GET')
+  {
+    res.view('setPassword',{id:req.param('id')})
+  }
+},
+
 };

@@ -45,6 +45,9 @@ module.exports.routes = {
   'GET /approvedUserList':{view:'approvedUserList'},
   'GET /forgotPassword':'UserController.forgotPassword',
   'GET /changePassword':{view:'changePassword'},
+  'POST /changePassword':'UserController.forgotPassword',
+  'GET /setPassword/:id':'UserController.resetPassword',
+  'POST /setPassword':'UserController.resetPassword',
   /***************************************************************************
   *                                                                          *
   * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
